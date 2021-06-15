@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class MovieRateRecord implements Serializable {
 
-    private static final String LINE_PATTERN_STRING = "^\\d{4}-\\d{2}-\\d{2} (\\d+) (\\d+) (\\d+)$";
+    private static final String LINE_PATTERN_STRING = "^\\d{4}-\\d{2}-\\d{2},(\\d+),(\\d+),(\\d+)$";
     private static final Pattern LINE_PATTERN = Pattern.compile(LINE_PATTERN_STRING);
 
     private LocalDate date;

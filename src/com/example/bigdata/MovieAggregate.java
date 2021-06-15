@@ -18,9 +18,21 @@ public class MovieAggregate implements Serializable {
         this.uniqueRatesCount = uniqueRatesCount;
     }
 
-    public void update(MovieRateRecord record) {
+    public void updateRates(MovieRateRecord record) {
         rateCount++;
         rateSum += record.getRate();
+    }
+
+    public void incrementUniqueRatesCount() {
+        uniqueRatesCount++;
+    }
+
+    public Boolean anomalyDetected(int minimalRatesNumber, float minimalRatesAverage) {
+        return rateCount >= minimalRatesNumber && (float) rateSum / (float) rateCount >= minimalRatesAverage;
+    }
+
+    public float getRatesAverage() {
+        return (float) rateSum / (float) rateCount;
     }
 
     @Override
