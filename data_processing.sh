@@ -1,0 +1,2 @@
+CLUSTER_NAME=$(/usr/share/google/get_metadata_value attributes/dataproc-cluster-name)
+java -cp /usr/lib/kafka/libs/*:NetflixPrizeData.jar com.example.bigdata.MoviesDataProcessing ${CLUSTER_NAME}-w-0:9092 200 3 30
